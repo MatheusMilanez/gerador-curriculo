@@ -32,6 +32,8 @@ O objetivo deste projeto é facilitar a criação de currículos. O usuário só
 
 Uma seção dedicada à galeria de fotos do processo de construção do projeto estará disponível. Esta seção mostrará imagens que documentam as diferentes etapas do desenvolvimento do Gerador de Currículos.
 
+### Página em Construção
+
 ![Página em Construção](/imgs/captura-de-tela-da-pagina-em-construcao.png)
 
 ---
