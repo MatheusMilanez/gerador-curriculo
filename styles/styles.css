@@ -1,0 +1,37 @@
+/*CSS DA HOME E DO INDEX*/
+
+body {
+  width: 100%;
+  height: 100%;
+}
+
+.main {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dados-pessoais {
+  max-width: 1000px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10;
+  justify-content: space-around;
+  background-color: #dadada;
+}
+
+.form {
+  max-width: 1000px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 10;
+  justify-content: space-around;
+  background-color: #dadada;
+}
+
+div {
+  flex-basis: calc(50% - 10px);
+}
