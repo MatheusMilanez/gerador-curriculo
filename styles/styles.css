@@ -25,6 +25,7 @@ body {
 .form {
   max-width: 1000px;
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   gap: 10;
   justify-content: space-around;

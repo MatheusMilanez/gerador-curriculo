@@ -12,6 +12,7 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <title>Curriculo do Povo</title>
   </head>
   <body>
@@ -34,7 +35,8 @@
             <input
               type="text"
               class="form-control"
-              id="exampleFormControlInput1"
+              id="nome"
+              onblur="buscaDados(this.value);"
               placeholder="Digite seu nome completo"
               required
             />
@@ -48,7 +50,7 @@
               id="cep"
               maxlength="9"
               placeholder="Digite seu CEP"
-              onblur="buscaCep(this.value);"
+              onblur="buscaCep(this.value); buscaDados(this.value);"
               required
             />
           </div>
@@ -59,6 +61,7 @@
               type="text"
               class="form-control"
               id="rua"
+              onblur="buscaDados(this.value);"
               maxlength="60"
               placeholder="Digite o nome da sua rua"
               required
@@ -71,6 +74,7 @@
               type="text"
               class="form-control"
               id="bairro"
+              onblur="buscaDados(this.value);"
               maxlength="40"
               placeholder="Digite o nome do seu bairro"
               required
@@ -84,6 +88,7 @@
               type="text"
               class="form-control"
               id="cidade"
+              onblur="buscaDados(this.value);"
               maxlength="40"
               placeholder="Digite o nome da sua cidade"
               required
@@ -97,6 +102,7 @@
               type="text"
               class="form-control"
               id="uf"
+              onblur="buscaDados(this.value);"
               maxlength="2"
               placeholder="Digite a sigla do seu estado (Ex: RJ)"
               required
@@ -105,13 +111,12 @@
           <!--FIm div-->
 
           <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label"
-              >Telefone</label
-            >
+            <label for="telefone" class="form-label">Telefone</label>
             <input
               type="text"
               class="form-control"
-              id="exampleFormControlInput1"
+              id="telefone"
+              onblur="buscaDados(this.value);"
               placeholder="Digite seu número de telefone"
               required
             />
@@ -119,13 +124,12 @@
           <!--FIm div-->
 
           <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label"
-              >E-mail</label
-            >
+            <label for="email" class="form-label">E-mail</label>
             <input
               type="email"
               class="form-control"
-              id="exampleFormControlInput1"
+              id="email"
+              onblur="buscaDados(this.value);"
               placeholder="Digite seu e-mail"
               required
             />
@@ -135,13 +139,116 @@
         <!--FIm Section-->
 
         <h3 class="h3">Formação Acadêmica</h3>
-        <button id="Download">Download pdf</button>
-        <section class="dados-pessoais"></section>
+
+        <section class="dados-pessoais">
+          <div class="mb-3">
+            <label for="nomeEscola" class="form-label"
+              >Nome da escola / universidade / curso</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="nomeEscola"
+              placeholder="Digite o nome da escola/universidade/curso"
+              required
+            />
+          </div>
+          <!--FIm div-->
+
+          <div class="mb-3">
+            <label for="nivel" class="form-label">Nivel:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="nivel"
+              placeholder="Digite o nível de formação (Ex: Ensino Médio, Superior)"
+              required
+            />
+          </div>
+          <!--FIm div-->
+
+          <div class="mb-3">
+            <label for="dataConclusao" class="form-label"
+              >Data da conclusão:</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="dataConclusao"
+              placeholder="Digite a data de conclusão (Ex: 12/2023)"
+              required
+            />
+          </div>
+          <!--FIm div-->
+        </section>
+
+        <section class="lista-formacao"></section>
+
+        <h3 class="h3">Experiência Profissional</h3>
+
+        <section class="dados-pessoais">
+          <div class="mb-3">
+            <label for="nomeEmpresa" class="form-label">Nome da empresa</label>
+            <input
+              type="text"
+              class="form-control"
+              id="nomeEmpresa"
+              placeholder="Digite o nome da empresa"
+              required
+            />
+          </div>
+          <!--FIm div-->
+
+          <div class="mb-3">
+            <label for="cargo" class="form-label">Cargo:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="cargo"
+              placeholder="Digite o cargo ocupado"
+              required
+            />
+          </div>
+          <!--FIm div-->
+
+          <div class="mb-3">
+            <label for="periodo" class="form-label">Período:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="periodo"
+              placeholder="Digite o período (Ex: Jan 2020 - Dez 2021)"
+              required
+            />
+          </div>
+          <!--FIm div-->
+
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label"
+              >Principal Atividade:</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="principalAtividade"
+              placeholder="Descreva a principal atividade realizada"
+              required
+            />
+          </div>
+          <!--FIm div-->
+        </section>
+
+        <section class="lista-formacao"></section>
+
+        <div class="col-auto">
+          <button type="submit" class="btn btn-primary mb-3" id="download">
+            Gerar PDF
+          </button>
+        </div>
       </form>
     </main>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="/index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"

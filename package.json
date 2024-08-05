@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "bootstrap": "^5.3.3",
-    "jspdf": "^2.5.1"
+    "bootstrap": "^5.3.3"
   }
 }
