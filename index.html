@@ -17,11 +17,28 @@
                 <label for="name">Nome Completo:</label>
                 <input type="text" id="name" name="name" required>
 
+                <label for="birthdate">Data de Nascimento:</label>
+                <input type="text" id="birthdate" name="birthdate" placeholder="DD/MM/YYYY" required>
+
+                <label for="gender">Gênero:</label>
+                <select id="gender" name="gender" required>
+                    <option value="">Selecione</option>
+                    <option value="masculino">Masculino</option>
+                    <option value="feminino">Feminino</option>
+                    <option value="outro">Outro</option>
+                </select>
+
                 <label for="cep">CEP:</label>
                 <input type="text" id="cep" name="cep" required>
 
                 <label for="street">Rua:</label>
                 <input type="text" id="street" name="street" required>
+
+                <label for="number">Número:</label>
+                <input type="text" id="number" name="number" required>
+
+                <label for="complement">Complemento:</label>
+                <input type="text" id="complement" name="complement">
 
                 <label for="neighborhood">Bairro:</label>
                 <input type="text" id="neighborhood" name="neighborhood" required>
@@ -37,6 +54,13 @@
 
                 <label for="email">E-mail:</label>
                 <input type="email" id="email" name="email" required>
+
+                <label for="pcd">PCD (Pessoa com Deficiência)?:</label>
+                <button type="button" id="pcd-button">Sim</button>
+                <div id="disability-container" style="display: none;">
+                    <label for="disability">Descreva sua deficiência:</label>
+                    <input type="text" id="disability" name="disability">
+                </div>
             </section>
 
             <section id="education-section">
