@@ -33,25 +33,58 @@ document.getElementById("cep").addEventListener("blur", () => {
 //-- Pegar Dados Formulário
 
 // Dados Pessoais
+var foto = document.getElementById("formFile");
+var nome = document.getElementById("nome");
+var cep = document.getElementById("cep");
+var rua = document.getElementById("rua");
+var bairro = document.getElementById("bairro");
+var cidade = document.getElementById("cidade");
+var uf = document.getElementById("uf");
+var telefone = document.getElementById("telefone");
+var email = document.getElementById("email");
 
-function buscaDados(value) {
-  console.log("HERE", value);
-}
+//Formação academica
+var nomeEscola = document.getElementById("nomeEscola");
+var nivel = document.getElementById("nivel");
+var dataConclusao = document.getElementById("dataConclusao");
 
-buscaDados();
+//Formação Profissional
+var nomeEmpresa = document.getElementById("nomeEmpresa");
+var cargo = document.getElementById("cargo");
+var periodo = document.getElementById("periodo");
+var principalAtividade = document.getElementById("principalAtividade");
+
 //--------------------------------------------
 
 //Download PDF
-
-document.getElementById("download").addEventListener("click", () => {
+async function generatePDF() {
+  const { jsPDF } = window.jspdf;
   if (window.jspdf) {
-    const { jsPDF } = window.jspdf; // Aqui é onde acessamos a classe jsPDF
-    const doc = new jsPDF();
-    doc.text("Olá, Mundo!", 10, 10);
-    doc.save("documento.pdf");
+    try {
+      const resume = document.getElementById("curriculo");
+      const canvas = await html2canvas(resume);
+      const imgData = canvas.toDataURL("image/png");
+
+      const doc = new jsPDF({
+        orientation: "portrait",
+        unit: "mm",
+        format: "a4",
+      });
+
+      const imgProps = doc.getImageProperties(imgData);
+      const pdfWidth = doc.internal.pageSize.getWidth();
+      const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+
+      doc.addImage(imgData, "PNG", 0, 0, pdfWidth, pdfHeight);
+
+      // Save the PDF
+      doc.save("resume.pdf");
+    } catch (erro) {
+      console.error("ERROR:", erro);
+    }
   } else {
-    console.log("JSPDF não está disponivel");
+    console.log("BIBLIOTECA JSPDF NÃO ACESSADA");
   }
-});
+}
 
 //---------------------
