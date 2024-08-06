@@ -1,5 +1,33 @@
 {
+  "name": "Gerador-de-Curriculo",
+  "version": "1.0.0",
+  "description": "Uma aplicação web para gerar CVs em PDF.",
+  "main": "index.html",
+  "scripts": {
+    "start": "live-server",
+    "build": "echo 'Build process here'",
+    "test": "echo 'No tests specified' && exit 0"
+  },
+  "keywords": [
+    "cv",
+    "curriculo",
+    "pdf",
+    "gerador",
+    "web"
+  ],
+  "author": "Caio Melo",
+  "license": "MIT",
   "dependencies": {
-    "bootstrap": "^5.3.3"
+    "jspdf": "^2.5.1",
+    "live-server": "^1.2.1"
+  },
+  "devDependencies": {},
+  "homepage": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/caio-videmelo/gerador-curriculo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/caio-videmelo/gerador-curriculo/issues"
   }
 }
