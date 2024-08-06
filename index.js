@@ -82,6 +82,16 @@ document.getElementById("cep").addEventListener("blur", function() {
     }
 });
 
+// Event listener for PCD button
+document.getElementById("pcd-button").addEventListener("click", function() {
+    const disabilityContainer = document.getElementById("disability-container");
+    if (disabilityContainer.style.display === "none") {
+        disabilityContainer.style.display = "block"; // Show the disability input
+    } else {
+        disabilityContainer.style.display = "none"; // Hide the disability input
+    }
+});
+
 // Function to handle form submission and PDF generation
 document.getElementById("cvForm").addEventListener("submit", function(event) {
     event.preventDefault(); // Prevent default form submission
