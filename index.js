@@ -1,4 +1,3 @@
-// script.js
 document.addEventListener('DOMContentLoaded', function() {
     let workExperienceCount = 1;
     let educationCount = 1;
@@ -33,8 +32,19 @@ document.addEventListener('DOMContentLoaded', function() {
             <label for="position-${workExperienceCount}">Cargo:</label>
             <input type="text" id="position-${workExperienceCount}" name="position[]" required>
 
-            <label for="period-${workExperienceCount}">Período:</label>
-            <input type="text" id="period-${workExperienceCount}" name="period[]" required>
+            <label for="start-date-${workExperienceCount}">Data de Início:</label>
+            <input type="text" id="start-date-${workExperienceCount}" name="start-date[]" placeholder="DD/MM/YYYY" required>
+
+            <div id="current-question-${workExperienceCount}" style="margin: 10px 0;">
+                <span>Atual?</span>
+                <button type="button" id="current-yes-${workExperienceCount}">Sim</button>
+                <button type="button" id="current-no-${workExperienceCount}">Não</button>
+            </div>
+
+            <div id="end-date-container-${workExperienceCount}" style="display: none;">
+                <label for="end-date-${workExperienceCount}">Data de Término:</label>
+                <input type="text" id="end-date-${workExperienceCount}" name="end-date[]">
+            </div>
 
             <label for="activity-${workExperienceCount}">Principal Atividade:</label>
             <textarea id="activity-${workExperienceCount}" name="activity[]" required></textarea>
@@ -42,7 +52,24 @@ document.addEventListener('DOMContentLoaded', function() {
 
         container.appendChild(newExperience);
         workExperienceCount++;
+
+        // Add event listeners for the new experience
+        addCurrentQuestionListeners(workExperienceCount - 1);
     });
+
+    // Function to add event listeners for current question buttons
+    function addCurrentQuestionListeners(index) {
+        document.getElementById(`current-yes-${index}`).addEventListener('click', function() {
+            const startDate = document.getElementById(`start-date-${index}`).value;
+            const ongoingText = document.createElement('p');
+            ongoingText.textContent = `Data de Início: ${startDate} - Atualmente`;
+            document.getElementById('work-experience-container').appendChild(ongoingText);
+        });
+
+        document.getElementById(`current-no-${index}`).addEventListener('click', function() {
+            document.getElementById(`end-date-container-${index}`).style.display = 'block'; // Show end date input
+        });
+    }
 
     // Function to add more educational entries
     document.getElementById('add-education').addEventListener('click', function() {
