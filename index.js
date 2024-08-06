@@ -1,3 +1,56 @@
+// script.js
+document.addEventListener('DOMContentLoaded', function() {
+    let workExperienceCount = 1;
+    let educationCount = 1;
+
+    // Function to add more work experiences
+    document.getElementById('add-work-experience').addEventListener('click', function() {
+        const container = document.getElementById('work-experience-container');
+
+        const newExperience = document.createElement('div');
+        newExperience.classList.add('work-experience');
+
+        newExperience.innerHTML = `
+            <label for="company-${workExperienceCount}">Nome da empresa:</label>
+            <input type="text" id="company-${workExperienceCount}" name="company[]" required>
+
+            <label for="position-${workExperienceCount}">Cargo:</label>
+            <input type="text" id="position-${workExperienceCount}" name="position[]" required>
+
+            <label for="period-${workExperienceCount}">Período:</label>
+            <input type="text" id="period-${workExperienceCount}" name="period[]" required>
+
+            <label for="activity-${workExperienceCount}">Principal Atividade:</label>
+            <textarea id="activity-${workExperienceCount}" name="activity[]" required></textarea>
+        `;
+
+        container.appendChild(newExperience);
+        workExperienceCount++;
+    });
+
+    // Function to add more educational entries
+    document.getElementById('add-education').addEventListener('click', function() {
+        const container = document.getElementById('education-container');
+
+        const newEducation = document.createElement('div');
+        newEducation.classList.add('education-entry');
+
+        newEducation.innerHTML = `
+            <label for="education-${educationCount}">Nome da escola/universidade/curso:</label>
+            <input type="text" id="education-${educationCount}" name="education[]" required>
+
+            <label for="level-${educationCount}">Nível:</label>
+            <input type="text" id="level-${educationCount}" name="level[]" required>
+
+            <label for="graduation-date-${educationCount}">Data da conclusão:</label>
+            <input type="date" id="graduation-date-${educationCount}" name="graduation-date[]" required>
+        `;
+
+        container.appendChild(newEducation);
+        educationCount++;
+    });
+});
+
 // CEP
 
 async function buscaCep(cep) {
