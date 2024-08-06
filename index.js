@@ -1,7 +1,56 @@
+// script.js
 document.addEventListener('DOMContentLoaded', function() {
     let workExperienceCount = 1;
     let educationCount = 1;
 
+    // Function to validate date format (DD/MM/YYYY)
+    function isValidDate(dateString) {
+        const regex = /^(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])\/(19|20)\d\d$/; // Matches DD/MM/YYYY
+        if (!regex.test(dateString)) return false;
+
+        const parts = dateString.split('/');
+        const day = parseInt(parts[0], 10);
+        const month = parseInt(parts[1], 10);
+        const year = parseInt(parts[2], 10);
+
+        const date = new Date(year, month - 1, day);
+        return date.getFullYear() === year && date.getMonth() === month - 1 && date.getDate() === day;
+    }
+
+    // Function to handle form submission and PDF generation
+    document.getElementById("cvForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent default form submission
+
+        // Validate dates
+        const birthdate = document.getElementById("birthdate").value;
+        const graduationDate = document.getElementById("graduation-date-0").value;
+        const startDate = document.getElementById("start-date-0").value;
+        const endDate = document.getElementById("end-date-0").value;
+
+        if (!isValidDate(birthdate)) {
+            alert("Por favor, insira uma data de nascimento válida no formato DD/MM/YYYY.");
+            return;
+        }
+        if (!isValidDate(graduationDate)) {
+            alert("Por favor, insira uma data de conclusão válida no formato DD/MM/YYYY.");
+            return;
+        }
+        if (!isValidDate(startDate)) {
+            alert("Por favor, insira uma data de início válida no formato DD/MM/YYYY.");
+            return;
+        }
+        if (endDate && !isValidDate(endDate)) {
+            alert("Por favor, insira uma data de término válida no formato DD/MM/YYYY.");
+            return;
+        }
+
+        // Proceed with PDF generation if all dates are valid
+        const { jsPDF } = window.jspdf; // Access jsPDF
+        const doc = new jsPDF();
+
+        // Collecting data and generating PDF...
+    });
+    
     // Event listeners for completion question
     document.getElementById('completed-yes').addEventListener('click', function() {
         document.getElementById('graduation-date-container').style.display = 'block'; // Show graduation date input
