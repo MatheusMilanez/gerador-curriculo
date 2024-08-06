@@ -1,37 +1,24 @@
-/*CSS DA HOME E DO INDEX*/
-
 body {
-  width: 100%;
-  height: 100%;
+  background-color: #f8f9fa;
+  font-family: Arial, sans-serif;
 }
-
 .main {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  max-width: 900px;
+  margin: 30px auto;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-
-.dados-pessoais {
-  max-width: 1000px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10;
-  justify-content: space-around;
-  background-color: #dadada;
+.h1 {
+  text-align: center;
+  margin-bottom: 20px;
 }
-
-.form {
-  max-width: 1000px;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  gap: 10;
-  justify-content: space-around;
-  background-color: #dadada;
+.form-section {
+  margin-bottom: 20px;
 }
-
-div {
-  flex-basis: calc(50% - 10px);
+.form-section h3 {
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
 }
