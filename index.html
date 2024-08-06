@@ -39,16 +39,21 @@
                 <input type="email" id="email" name="email" required>
             </section>
 
-            <section>
+            <section id="education-section">
                 <h2>Formação Acadêmica</h2>
-                <label for="education">Nome da escola/universidade/curso:</label>
-                <input type="text" id="education" name="education" required>
+                <div id="education-container">
+                    <div class="education-entry">
+                        <label for="education-0">Nome da escola/universidade/curso:</label>
+                        <input type="text" id="education-0" name="education[]" required>
 
-                <label for="level">Nível:</label>
-                <input type="text" id="level" name="level" required>
+                        <label for="level-0">Nível:</label>
+                        <input type="text" id="level-0" name="level[]" required>
 
-                <label for="graduation-date">Data da conclusão:</label>
-                <input type="date" id="graduation-date" name="graduation-date" required>
+                        <label for="graduation-date-0">Data da conclusão:</label>
+                        <input type="date" id="graduation-date-0" name="graduation-date[]" required>
+                    </div>
+                </div>
+                <button type="button" id="add-education">Adicionar Mais Formação</button>
             </section>
 
             <section id="work-experience-section">
