@@ -92,29 +92,39 @@
             </section>
 
             <section id="work-experience-section">
-                <h2>Experiência Profissional</h2>
-                <div id="work-experience-container">
-                    <div class="work-experience">
-                        <label for="company-0">Nome da empresa:</label>
-                        <input type="text" id="company-0" name="company[]" required>
+    <h2>Experiência Profissional</h2>
+    <div id="work-experience-container">
+        <div class="work-experience">
+            <label for="company-0">Nome da empresa:</label>
+            <input type="text" id="company-0" name="company[]" required>
 
-                        <label for="position-0">Cargo:</label>
-                        <input type="text" id="position-0" name="position[]" required>
+            <label for="position-0">Cargo:</label>
+            <input type="text" id="position-0" name="position[]" required>
 
-                        <label for="period-0">Período:</label>
-                        <input type="text" id="period-0" name="period[]" required>
+            <label for="start-date-0">Data de Início:</label>
+            <input type="text" id="start-date-0" name="start-date[]" placeholder="DD/MM/YYYY" required>
 
-                        <label for="activity-0">Principal Atividade:</label>
-                        <textarea id="activity-0" name="activity[]" required></textarea>
-                    </div>
-                </div>
-                <button type="button" id="add-work-experience">Adicionar Mais Experiência</button>
-            </section>
+            <div id="current-question-0" style="margin: 10px 0;">
+                <span>Atual?</span>
+                <button type="button" id="current-yes-0">Sim</button>
+                <button type="button" id="current-no-0">Não</button>
+            </div>
 
-            <button type="submit">Gerar PDF</button>
+            <div id="end-date-container-0" style="display: none;">
+                <label for="end-date-0">Data de Término:</label>
+                <input type="text" id="end-date-0" name="end-date[]">
+            </div>
+
+            <label for="activity-0">Principal Atividade:</label>
+            <textarea id="activity-0" name="activity[]" required></textarea>
+        </div>
+    </div>
+    <button type="button" id="add-work-experience">Adicionar Mais Experiência</button>
+</section>
+
+<button type="submit">Gerar PDF</button>
         </form>
     </main>
-
     <footer>
         <p>&copy; 2024 Gerador de Currículo</p>
     </footer>
