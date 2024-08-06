@@ -73,11 +73,19 @@
                         <label for="level-0">Curso:</label>
                         <input type="text" id="level-0" name="level[]" required>
 
-                        <label for="level-0">Nível:</label>
-                        <input type="text" id="level-0" name="level[]" required>
+                        <label for="nivel-0">Nível:</label>
+                        <input type="text" id="nivel-0" name="nivel[]" required>
 
-                        <label for="graduation-date-0">Data da conclusão:</label>
-                        <input type="date" id="graduation-date-0" name="graduation-date[]" required>
+                        <div id="completion-question" style="margin: 10px 0;">
+                            <span>Concluído?</span>
+                            <button type="button" id="completed-yes">Sim</button>
+                            <button type="button" id="completed-no">Não</button>
+                        </div>
+
+                        <div id="graduation-date-container" style="display: none;">
+                            <label for="graduation-date-0">Data da conclusão:</label>
+                            <input type="date" id="graduation-date-0" name="graduation-date[]" required>
+                        </div>
                     </div>
                 </div>
                 <button type="button" id="add-education">Adicionar Mais Formação</button>
