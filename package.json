@@ -1,4 +1,22 @@
 {
+  "name": "Gerador-de-Curriculo",
+  "version": "1.0.0",
+  "description": "Uma aplicação web para gerar CVs em PDF.",
+  "main": "index.html",
+  "scripts": {
+    "start": "live-server",
+    "build": "echo 'Build process here'",
+    "test": "echo 'No tests specified' && exit 0"
+  },
+  "keywords": [
+    "cv",
+    "curriculo",
+    "pdf",
+    "gerador",
+    "web"
+  ],
+  "author": "Matheus Milanez | Caio Melo",
+  "license": "MIT",
   "dependencies": {
     "bootstrap": "^5.3.3",
     "html2canvas": "^1.4.1",
