@@ -1,32 +1,24 @@
-/* styles.css */
 body {
+  background-color: #f8f9fa;
   font-family: Arial, sans-serif;
-  margin: 20px;
 }
-
-h1,
-h2,
-h3 {
-  color: #333;
+.main {
+  max-width: 900px;
+  margin: 30px auto;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-
-p {
-  line-height: 1.5;
-}
-
-.section {
+.h1 {
+  text-align: center;
   margin-bottom: 20px;
 }
-
-.section-title {
-  font-size: 18px;
-  font-weight: bold;
+.form-section {
+  margin-bottom: 20px;
 }
-
-.item {
-  margin-bottom: 10px;
-}
-
-.item-title {
-  font-weight: bold;
+.form-section h3 {
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
 }
