@@ -3,11 +3,9 @@
   "version": "1.0.0",
   "description": "Uma aplicação web para gerar CVs em PDF.",
   "main": "index.html",
-"scripts": {
-  "start": "live-server",
-  "build": "echo 'No build process required'",
-  "test": "echo 'No tests specified' && exit 0"
-},
+  "scripts": {
+    "start": "live-server"
+  },
   "keywords": [
     "cv",
     "curriculo",
