@@ -15,8 +15,8 @@
     <title>Curriculo do Povo</title>
   </head>
   <body>
+    <h1 class="h1">Bem-Vindo ao Currículo do Povo</h1>
     <main class="main" id="curriculo">
-      <h1 class="h1">Bem-Vindo ao Currículo do Povo</h1>
       <form class="form">
         <div class="form-section">
           <h3>Dados Pessoais</h3>
@@ -155,59 +155,60 @@
 
         <div class="form-section">
           <h3>Experiência Profissional</h3>
-          <div class="row mb-3">
-            <div class="col-md-12">
-              <label for="nomeEmpresa" class="form-label"
-                >Nome da empresa</label
-              >
-              <input
-                type="text"
-                class="form-control"
-                id="nomeEmpresa"
-                placeholder="Digite o nome da empresa"
-              />
+
+            <div class="row mb-3">
+              <div class="col-md-12">
+                <label for="nomeEmpresa" class="form-label">Nome da empresa</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    id="nomeEmpresa"
+                    placeholder="Digite o nome da empresa"
+                />
+              </div>
             </div>
-          </div>
-          <div class="row mb-3">
-            <div class="col-md-6">
-              <label for="cargo" class="form-label">Cargo</label>
-              <input
-                type="text"
-                class="form-control"
-                id="cargo"
-                placeholder="Digite o cargo ocupado"
-              />
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <label for="cargo" class="form-label">Cargo</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    id="cargo"
+                    placeholder="Digite o cargo ocupado"
+                />
+              </div>
+              <div class="col-md-6">
+                <label for="periodo" class="form-label">Período</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    id="periodo"
+                    placeholder="Digite o período (Ex: Jan 2020 - Dez 2021)"
+                />
+              </div>
             </div>
-            <div class="col-md-6">
-              <label for="periodo" class="form-label">Período</label>
-              <input
-                type="text"
-                class="form-control"
-                id="periodo"
-                placeholder="Digite o período (Ex: Jan 2020 - Dez 2021)"
-              />
-            </div>
-          </div>
-          <div class="row mb-3">
-            <div class="col-md-12">
-              <label for="principalAtividade" class="form-label"
+            <div class="row mb-3">
+              <div class="col-md-12">
+                <label for="principalAtividade" class="form-label"
                 >Principal Atividade</label
-              >
-              <input
-                type="text"
-                class="form-control"
-                id="principalAtividade"
-                placeholder="Descreva a principal atividade realizada"
-              />
+                >
+                <input
+                    type="text"
+                    class="form-control"
+                    id="principalAtividade"
+                    placeholder="Descreva a principal atividade realizada"
+                />
+              </div>
             </div>
-          </div>
+
         </div>
 
         <div class="text-center">
-          <button onclick="generatePDF()" class="btn btn-primary">
+          <button type="button" id="generate-pdf" class="btn btn-primary">
             Gerar PDF
           </button>
         </div>
+
       </form>
     </main>
     <script
