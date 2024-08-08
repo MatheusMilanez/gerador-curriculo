@@ -1,0 +1,44 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+h1, h2, h3 {
+  color: #333;
+}
+
+p {
+  line-height: 1.5;
+}
+
+.section {
+  margin-bottom: 20px;
+}
+
+.section-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.item {
+  margin-bottom: 10px;
+}
+
+.item-title {
+  font-weight: bold;
+}
+
+.design1 {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+.design2 {
+    background-color: #e0e0ff;
+    color: #000;
+}
+
+.design3 {
+    background-color: #ffe0e0;
+    color: #000;
+}
