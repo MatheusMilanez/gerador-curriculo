@@ -118,24 +118,24 @@ document.addEventListener('DOMContentLoaded', function() {
             previewContent += `<p>Experiência ${index + 1}: ${company} - ${position}</p>`;
         });
 
-        document.getElementById("preview-content").innerHTML = previewContent;
+        // Get selected design
+        const selectedDesign = document.getElementById("cv-design").value;
+        
+        // Apply design styles
+        const previewContainer = document.getElementById("preview-content");
+        previewContainer.innerHTML = previewContent;
+
+        // Clear previous design classes
+        previewContainer.className = '';
+        
+        // Apply selected design class
+        previewContainer.classList.add(selectedDesign);
+
         document.getElementById("cv-preview").style.display = 'block';
     }
 
     // Event listener for the preview button
     document.getElementById("preview-button").addEventListener("click", updateCVPreview);
-
-    // Function to validate date format (DD/MM/YYYY)
-    function isValidDate(dateString) {
-        const regex = /^(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])\/(19|20)\d\d$/; // Matches DD/MM/YYYY
-        if (!regex.test(dateString)) return false;
-        const parts = dateString.split('/');
-        const day = parseInt(parts[0], 10);
-        const month = parseInt(parts[1], 10);
-        const year = parseInt(parts[2], 10);
-        const date = new Date(year, month - 1, day);
-        return date.getFullYear() === year && date.getMonth() === month - 1 && date.getDate() === day;
-    }
 
     // Function to handle form submission and PDF generation
     document.getElementById("cvForm").addEventListener("submit", function(event) {
@@ -143,15 +143,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Validate dates
         const birthdate = document.getElementById("birthdate").value;
-        const graduationDate = document.getElementById("graduation-date-0")?.value;
+        const graduationDate = document.getElementById("graduation-date-0").value;
         const startDate = document.getElementById("start-date-0").value;
-        const endDate = document.getElementById("end-date-0")?.value;
+        const endDate = document.getElementById("end-date-0").value;
 
         if (!isValidDate(birthdate)) {
             alert("Por favor, insira uma data de nascimento válida no formato DD/MM/YYYY.");
             return;
         }
-        if (graduationDate && !isValidDate(graduationDate)) {
+        if (!isValidDate(graduationDate)) {
             alert("Por favor, insira uma data de conclusão válida no formato DD/MM/YYYY.");
             return;
         }
