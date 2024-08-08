@@ -1,8 +1,8 @@
 # Gerador de Currículos
 
-## Overview
+## Descrição
 
-O gerador de Currículos é uma aplicação web criada para ajudar pessoas a criarem seus Curriculum Vitae (CV) em formato PDF. Usuários inserem informações pessoais, educacionais e experiência de trabalho que serão compiladas em um CV estruturado.
+O Gerador de Currículos é uma aplicação web que permite aos usuários criar e visualizar currículos personalizados antes de gerá-los em formato PDF. O aplicativo oferece uma interface amigável para inserir dados pessoais, formação acadêmica e experiência profissional, além de permitir a escolha entre diferentes modelos de design para o currículo.
 
 ## Funcionalidades
 
@@ -30,9 +30,9 @@ Endereço: Usuários podem inserir seu endereço residencial, incluindo:
 
   - Estado (Preenchido automaticamente através do CEP informado)
     
-Telefone e e-mail: Preenchimento obrigatório de informações para contato.
+  - Telefone e e-mail: Preenchimento obrigatório de informações para contato.
 
-Indicador de Pessoa com Deficiência (PCD): Usuários podem indicar se possuem alguma deficiência, com um campo opcional para descrevê-las.
+  - Indicador de Pessoa com Deficiência (PCD): Usuários podem indicar se possuem alguma deficiência, com um campo opcional para     descrevê-las.
 
 2. Seção de Formação Acadêmica
 
@@ -58,7 +58,19 @@ Detalhes da Experiência de Trabalho: Usuários podem inserir informações sobr
  
   - Atividade principal: Um campo para inserir uma descrição breve das atribuições e responsabilidades do cargo.
     
-4. Gerar PDF
+4. Escolha de Modelos:
+
+O aplicativo oferece três modelos de design diferentes para o currículo. Os usuários podem selecionar seu modelo preferido antes de visualizar o currículo.
+
+5. Pré-visualização do Currículo:
+
+Após inserir todos os dados, os usuários podem visualizar como ficará seu currículo antes de gerar o PDF. A visualização se adapta ao modelo de design escolhido.
+
+6. Validação de Dados:
+
+O sistema valida as entradas, garantindo que as datas estejam no formato correto e que todos os campos obrigatórios sejam preenchidos.
+
+7. Gerar PDF
    
 Ao final, os usuários podem clicar no botão "Gerar PDF" para compilar todas as informações fornecidas em um CV profissional formatado em documento PDF.
 
@@ -94,7 +106,7 @@ Abra o index.html num navegador web.
 
 Preencha o formulário com suas informações pessoais, formação acadêmica e experiência de trabalho.
 
-Clique em "Gerar PDF" para gerar seu CV.
+Escolha um modelo, clique em "Visualizar CV" e, se estiver satisfeito, clique em "Gerar PDF" para gerar seu CV.
 
 ## Tecnologias Utilizadas
 
