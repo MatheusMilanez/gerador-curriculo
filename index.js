@@ -1,7 +1,9 @@
 // script.js
 document.addEventListener("DOMContentLoaded", function () {
   let workExperienceCount = 1;
+  let workExperienceNumber = 1;
   let educationCount = 1;
+  let educationNumber = 1;
 
   // Function to validate date format (DD/MM/YYYY)
   function isValidDate(dateString) {
@@ -90,41 +92,50 @@ document.addEventListener("DOMContentLoaded", function () {
   // Function to add more work experiences
   document
     .getElementById("add-work-experience")
-    .addEventListener("click", function () {
+    .addEventListener("click", () => {
       const container = document.getElementById("work-experience-container");
-
       const newExperience = document.createElement("div");
+
       newExperience.classList.add("work-experience");
+      newExperience.id = `work-experience-${workExperienceNumber}`;
 
       newExperience.innerHTML = `
-            <label for="company-${workExperienceCount}">Nome da empresa:</label>
-            <input type="text" id="company-${workExperienceCount}" name="company[]" required>
+        <label for="company-${workExperienceCount}">Nome da empresa:</label>
+          <input type="text" id="company-${workExperienceCount}" name="company[]" required>
 
-            <label for="position-${workExperienceCount}">Cargo:</label>
-            <input type="text" id="position-${workExperienceCount}" name="position[]" required>
+          <label for="position-${workExperienceCount}">Cargo:</label>
+          <input type="text" id="position-${workExperienceCount}" name="position[]" required>
 
-            <label for="start-date-${workExperienceCount}">Data de Início:</label>
-            <input type="text" id="start-date-${workExperienceCount}" name="start-date[]" placeholder="DD/MM/YYYY" required>
+          <label for="start-date-${workExperienceCount}">Data de Início:</label>
+          <input type="text" id="start-date-${workExperienceCount}" name="start-date[]" placeholder="DD/MM/YYYY" required>
 
-            <div id="current-question-${workExperienceCount}" style="margin: 10px 0;">
-                <span>Atual?</span>
-                <button type="button" id="current-yes-${workExperienceCount}">Sim</button>
-                <button type="button" id="current-no-${workExperienceCount}">Não</button>
-            </div>
+          <div id="current-question-${workExperienceCount}" style="margin: 10px 0;">
+              <span>Atual?</span>
+              <button type="button" id="current-yes-${workExperienceCount}">Sim</button>
+              <button type="button" id="current-no-${workExperienceCount}">Não</button>
+          </div>
 
-            <div id="end-date-container-${workExperienceCount}" style="display: none;">
-                <label for="end-date-${workExperienceCount}">Data de Término:</label>
-                <input type="text" id="end-date-${workExperienceCount}" name="end-date[]">
-            </div>
+          <div id="end-date-container-${workExperienceCount}" style="display: none;">
+              <label for="end-date-${workExperienceCount}">Data de Término:</label>
+              <input type="text" id="end-date-${workExperienceCount}" name="end-date[]">
+          </div>
 
-            <label for="activity-${workExperienceCount}">Principal Atividade:</label>
-            <textarea id="activity-${workExperienceCount}" name="activity[]" required></textarea>
-        `;
+          <label for="activity-${workExperienceCount}">Principal Atividade:</label>
+          <textarea id="activity-${workExperienceCount}" name="activity[]" required></textarea>
+
+          <button type="button" class="remove-work-experience">Remover</button>
+      `;
 
       container.appendChild(newExperience);
       workExperienceCount++;
+      workExperienceNumber++;
 
-      // Add event listeners for the new experience
+      newExperience
+        .querySelector(".remove-work-experience")
+        .addEventListener("click", () => {
+          newExperience.remove();
+        });
+
       addCurrentQuestionListeners(workExperienceCount - 1);
     });
 
@@ -154,9 +165,10 @@ document.addEventListener("DOMContentLoaded", function () {
     .getElementById("add-education")
     .addEventListener("click", function () {
       const container = document.getElementById("education-container");
-
       const newEducation = document.createElement("div");
+
       newEducation.classList.add("education-entry");
+      newEducation.id = `education-entry-${educationNumber}`;
 
       newEducation.innerHTML = `
             <label for="education-${educationCount}">Nome da escola/universidade:</label>
@@ -173,16 +185,50 @@ document.addEventListener("DOMContentLoaded", function () {
                 <button type="button" id="completed-yes">Sim</button>
                 <button type="button" id="completed-no">Não</button>
             </div>
+            
 
             <div id="graduation-date-container" style="display: none;">
                 <label for="graduation-date-${educationCount}">Data da conclusão:</label>
                 <input type="date" id="graduation-date-${educationCount}" name="graduation-date[]" required>
             </div>
+
+            <button type="button" class="remove-education">Remover</button>
         `;
 
       container.appendChild(newEducation);
       educationCount++;
+      educationNumber++;
+
+      newEducation
+        .querySelector(".remove-education")
+        .addEventListener("click", () => {
+          newEducation.remove();
+        });
+
+      newEducation
+        .querySelector(".completed-yes")
+        .addEventListener("click", () => {
+          newEducation.querySelector("click", () => {
+            `#graduation-date-container-${educationCount - 1}`;
+          }).style.display = "block";
+        });
+
+      newEducation
+        .querySelector(".completed-no")
+        .addEventListener("click", () => {
+          newEducation.querySelector("click", () => {
+            ` #graduation-date-container-${educationCount - 1}`;
+          }).style.display = "none";
+        });
     });
+
+  //Function remove-education
+  document.getElementById("remove-education").addEventListener("click", () => {
+    const container = document.getElementById("education-container");
+    const RemoveEducationDiv = document.getElementById("education-entry");
+
+    container.removeChild(RemoveEducationDiv);
+  });
 
   // Function to fetch address details based on CEP
   async function buscaCep(cep) {
@@ -233,11 +279,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const zipCode = document.getElementById("cep").value;
 
+      /*
       // Validate the zip code format
       if (!validateZipCode(zipCode)) {
         alert("Por favor, insira um CEP válido no formato XXXXX-XXX.");
         return;
       }
+        */
 
       const { jsPDF } = window.jspdf; // Access jsPDF
       const doc = new jsPDF();
