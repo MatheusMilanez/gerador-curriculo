@@ -4,9 +4,7 @@
   "description": "Uma aplicação web para gerar CVs em PDF.",
   "main": "index.html",
   "scripts": {
-    "start": "live-server",
-    "build": "echo 'Build process here'",
-    "test": "echo 'No tests specified' && exit 0"
+    "start": "live-server"
   },
   "keywords": [
     "cv",
@@ -21,5 +19,8 @@
     "bootstrap": "^5.3.3",
     "html2canvas": "^1.4.1",
     "jspdf": "^2.5.1"
+  },
+  "devDependencies": {
+    "prettier": "^3.3.3"
   }
 }
