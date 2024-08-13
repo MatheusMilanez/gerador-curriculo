@@ -7,15 +7,14 @@
 
 /* Estilos gerais para o body e header */
 body {
-  background-color: #f8f9fa;
+  background-color: #f4f4f4;
   font-family: Arial, sans-serif;
   line-height: 1.6;
   color: #333;
-  background-color: #f4f4f4;
 }
 
 header {
-  background-color: #333;
+  background-color: #004d40; /* Verde escuro */
   color: #fff;
   padding: 10px 0;
   text-align: center;
@@ -46,7 +45,7 @@ section {
 }
 
 h2 {
-  border-bottom: 2px solid #333;
+  border-bottom: 2px solid #ffb300; /* Amarelo dourado suave */
   padding-bottom: 10px;
   margin-bottom: 15px;
   color: #333;
@@ -78,13 +77,13 @@ input[type="tel"]:focus,
 input[type="email"]:focus,
 select:focus,
 textarea:focus {
-  border-color: #333;
+  border-color: #004d40; /* Verde escuro */
   outline: none;
 }
 
 /* Estilos para botões */
 button {
-  background-color: #007bff;
+  background-color: #ffb300; /* Amarelo dourado suave */
   color: #fff;
   border: none;
   padding: 10px 15px;
@@ -95,7 +94,7 @@ button {
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: #ff9800; /* Amarelo laranja suave */
 }
 
 button:disabled {
@@ -115,12 +114,12 @@ button:disabled {
 
 .remove-education,
 .remove-work-experience {
-  background-color: #dc3545;
+  background-color: #d32f2f; /* Vermelho escuro para remover */
 }
 
 .remove-education:hover,
 .remove-work-experience:hover {
-  background-color: #c82333;
+  background-color: #c62828; /* Tom mais escuro de vermelho */
 }
 
 #disability-container,
@@ -135,7 +134,7 @@ button:disabled {
 
 /* Estilos para o footer */
 footer {
-  background-color: #333;
+  background-color: #004d40; /* Verde escuro */
   color: #fff;
   padding: 20px 0;
   text-align: center;

@@ -13,7 +13,7 @@
     "gerador",
     "web"
   ],
-  "author": "Matheus Milanez | Caio Melo",
+  "author": "Matheus Milanez",
   "license": "MIT",
   "dependencies": {
     "bootstrap": "^5.3.3",
