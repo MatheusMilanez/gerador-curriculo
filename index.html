@@ -1,177 +1,184 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gerador de Currículo</title>
-    <link rel="stylesheet" href="/styles/styles.css" />
-    <link rel="shortcut icon" href="/imgs/logo.png" type="image/x-icon" />
-    <!--<link rel="stylesheet" href="/styles/reset.css" />-->
-  </head>
-  <body>
-    <header>
-      <h1>Gerador de Currículo</h1>
-    </header>
-    <main>
-      <form id="cvForm">
-        <section>
-          <h2>Dados Pessoais</h2>
-          <label for="name">Nome Completo:</label>
-          <input type="text" id="name" name="name" required />
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Gerador de Currículo</title>
+        <link rel="stylesheet" href="/styles/styles.css" />
+        <link rel="shortcut icon" href="/imgs/logo.png" type="image/x-icon" />
+        <!--<link rel="stylesheet" href="/styles/reset.css" />-->
+    </head>
+    <body>
+        <header>
+            <h1>Gerador de Currículo</h1>
+        </header>
+        <main>
+            <form id="cvForm">
+                <section>
+                    <h2>Dados Pessoais</h2>
+                    <label for="name">Nome Completo:</label>
+                    <input type="text" id="name" name="name" required />
 
-          <label for="birthdate">Data de Nascimento:</label>
-          <input
-            type="text"
-            id="birthdate"
-            name="birthdate"
-            placeholder="DD/MM/YYYY"
-            required
-          />
+                    <label for="birthdate">Data de Nascimento:</label>
+                    <input
+                        type="text"
+                        id="birthdate"
+                        name="birthdate"
+                        placeholder="DD/MM/YYYY"
+                        required
+                    />
 
-          <label for="gender">Gênero:</label>
-          <select id="gender" name="gender" required>
-            <option value="">Selecione</option>
-            <option value="masculino">Masculino</option>
-            <option value="feminino">Feminino</option>
-            <option value="outro">Outro</option>
-          </select>
+                    <label for="gender">Gênero:</label>
+                    <select id="gender" name="gender" required>
+                        <option value="">Selecione</option>
+                        <option value="masculino">Masculino</option>
+                        <option value="feminino">Feminino</option>
+                        <option value="outro">Outro</option>
+                    </select>
 
-          <label for="cep">CEP:</label>
-          <input type="text" id="cep" name="cep" required />
+                    <label for="cep">CEP:</label>
+                    <input type="text" id="cep" name="cep" required />
 
-          <label for="street">Rua:</label>
-          <input type="text" id="street" name="street" required />
+                    <label for="street">Rua:</label>
+                    <input type="text" id="street" name="street" required />
 
-          <label for="number">Número:</label>
-          <input type="text" id="number" name="number" required />
+                    <label for="number">Número:</label>
+                    <input type="text" id="number" name="number" required />
 
-          <label for="complement">Complemento:</label>
-          <input type="text" id="complement" name="complement" />
+                    <label for="complement">Complemento:</label>
+                    <input type="text" id="complement" name="complement" />
 
-          <label for="neighborhood">Bairro:</label>
-          <input type="text" id="neighborhood" name="neighborhood" required />
+                    <label for="neighborhood">Bairro:</label>
+                    <input type="text" id="neighborhood" name="neighborhood" required />
 
-          <label for="city">Cidade:</label>
-          <input type="text" id="city" name="city" required />
+                    <label for="city">Cidade:</label>
+                    <input type="text" id="city" name="city" required />
 
-          <label for="state">Estado:</label>
-          <input type="text" id="state" name="state" required />
+                    <label for="state">Estado:</label>
+                    <input type="text" id="state" name="state" required />
 
-          <label for="phone">Telefone:</label>
-          <input type="tel" id="phone" name="phone" required />
+                    <label for="phone">Telefone:</label>
+                    <input type="tel" id="phone" name="phone" required />
 
-          <label for="email">E-mail:</label>
-          <input type="email" id="email" name="email" required />
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" required />
 
-          <label for="pcd">PCD (Pessoa com Deficiência)?:</label>
-          <button type="button" id="pcd-button">Sim</button>
-          <div id="disability-container" style="display: none">
-            <label for="disability">Descreva sua deficiência:</label>
-            <input type="text" id="disability" name="disability" />
-          </div>
-        </section>
+                    <label for="pcd">PCD (Pessoa com Deficiência)?:</label>
+                    <button type="button" id="pcd-button">Sim</button>
+                    <div id="disability-container" style="display: none">
+                        <label for="disability">Descreva sua deficiência:</label>
+                        <input type="text" id="disability" name="disability" />
+                    </div>
+                </section>
 
-        <section id="education-section">
-          <h2>Formação Acadêmica</h2>
-          <div id="education-container">
-            <div class="education-entry" id="education-entry-0">
-              <label for="education-0">Nome da escola/universidade:</label>
-              <input type="text" id="education-0" name="education[]" required />
+                <section id="education-section">
+                    <h2>Formação Acadêmica</h2>
+                    <div id="education-container">
+                        <div class="education-entry" id="education-entry-0">
+                            <label for="education-0">Nome da escola/universidade:</label>
+                            <input type="text" id="education-0" name="education[]" required />
 
-              <label for="level-0">Curso:</label>
-              <input type="text" id="level-0" name="level[]" required />
+                            <label for="level-0">Curso:</label>
+                            <input type="text" id="level-0" name="level[]" required />
 
-              <label for="nivel-0">Nível:</label>
-              <input type="text" id="nivel-0" name="nivel[]" required />
+                            <label for="nivel-0">Nível:</label>
+                            <input type="text" id="nivel-0" name="nivel[]" required />
 
-              <div id="completion-question" style="margin: 10px 0">
-                <span>Concluído?</span>
-                <button type="button" id="completed-yes">Sim</button>
-                <button type="button" id="completed-no">Não</button>
-              </div>
+                            <div id="completion-question" style="margin: 10px 0">
+                                <span>Concluído?</span>
+                                <button type="button" class="completed-yes" id="completed-yes">
+                                    Sim
+                                </button>
+                                <button type="button" class="completed-no" id="completed-no">
+                                    Não
+                                </button>
+                            </div>
 
-              <div id="graduation-date-container" style="display: none">
-                <label for="graduation-date-0">Data da conclusão:</label>
-                <input
-                  type="date"
-                  id="graduation-date-0"
-                  name="graduation-date[]"
-                  required
-                />
-              </div>
-              <button
-                type="button"
-                class="remove-education"
-                id="remove-education"
-              >
-                Remover
-              </button>
+                            <div
+                                class="graduation-date-container"
+                                id="graduation-date-container-0"
+                                style="display: none"
+                            >
+                                <label for="graduation-date-0">Data da conclusão:</label>
+                                <input
+                                    type="text"
+                                    id="graduation-date-0"
+                                    name="graduation-date[]"
+                                />
+                            </div>
+                            <button type="button" class="remove-education" id="remove-education">
+                                Remover
+                            </button>
+                        </div>
+                    </div>
+
+                    <button type="button" id="add-education">Adicionar Mais Formação</button>
+                </section>
+
+                <section id="work-experience-section">
+                    <h2>Experiência Profissional</h2>
+                    <div id="work-experience-container">
+                        <div class="work-experience" id="work-experience-0">
+                            <label for="company-0">Nome da empresa:</label>
+                            <input type="text" id="company-0" name="company[]" required />
+
+                            <label for="position-0">Cargo:</label>
+                            <input type="text" id="position-0" name="position[]" required />
+
+                            <label for="start-date-0">Data de Início:</label>
+                            <input
+                                type="text"
+                                id="start-date-0"
+                                name="start-date[]"
+                                placeholder="DD/MM/YYYY"
+                                required
+                            />
+
+                            <div id="current-question-0" style="margin: 10px 0">
+                                <span>Atual?</span>
+                                <button type="button" id="current-yes-0">Sim</button>
+                                <button type="button" id="current-no-0">Não</button>
+                            </div>
+
+                            <div id="end-date-container-0" style="display: none">
+                                <label for="end-date-0">Data de Término:</label>
+                                <input type="text" id="end-date-0" name="end-date[]" />
+                            </div>
+
+                            <label for="activity-0">Principal Atividade:</label>
+                            <textarea id="activity-0" name="activity[]" required></textarea>
+
+                            <button
+                                type="button"
+                                class="remove-work-experience"
+                                id="remove-work-experience"
+                            >
+                                Remover
+                            </button>
+                        </div>
+                    </div>
+
+                    <button type="button" id="add-work-experience">
+                        Adicionar Mais Experiência
+                    </button>
+                </section>
+
+                <button type="submit" id="PDF">Gerar PDF</button>
+            </form>
+        </main>
+        <footer>
+            <div class="footer-content">
+                <p>&copy; 2024 Gerador de Currículo. Todos os direitos reservados.</p>
+                <nav>
+                    <ul>
+                        <li><a href="#home">Início</a></li>
+                        <li><a href="#about">Sobre</a></li>
+                        <li><a href="#contact">Contato</a></li>
+                    </ul>
+                </nav>
             </div>
-          </div>
-
-          <button type="button" id="add-education">
-            Adicionar Mais Formação
-          </button>
-        </section>
-
-        <section id="work-experience-section">
-          <h2>Experiência Profissional</h2>
-          <div id="work-experience-container">
-            <div class="work-experience" id="work-experience-0">
-              <label for="company-0">Nome da empresa:</label>
-              <input type="text" id="company-0" name="company[]" required />
-
-              <label for="position-0">Cargo:</label>
-              <input type="text" id="position-0" name="position[]" required />
-
-              <label for="start-date-0">Data de Início:</label>
-              <input
-                type="text"
-                id="start-date-0"
-                name="start-date[]"
-                placeholder="DD/MM/YYYY"
-                required
-              />
-
-              <div id="current-question-0" style="margin: 10px 0">
-                <span>Atual?</span>
-                <button type="button" id="current-yes-0">Sim</button>
-                <button type="button" id="current-no-0">Não</button>
-              </div>
-
-              <div id="end-date-container-0" style="display: none">
-                <label for="end-date-0">Data de Término:</label>
-                <input type="text" id="end-date-0" name="end-date[]" />
-              </div>
-
-              <label for="activity-0">Principal Atividade:</label>
-              <textarea id="activity-0" name="activity[]" required></textarea>
-
-              <button type="button" class="remove-work-experience" id="remove-work-experience">Remover</button>
-            </div>
-          </div>
-
-          <button type="button" id="add-work-experience">
-            Adicionar Mais Experiência
-          </button>
-        </section>
-
-        <button type="submit">Gerar PDF</button>
-      </form>
-    </main>
-    <footer>
-      <div class="footer-content">
-        <p>&copy; 2024 Gerador de Currículo. Todos os direitos reservados.</p>
-        <nav>
-          <ul>
-            <li><a href="#home">Início</a></li>
-            <li><a href="#about">Sobre</a></li>
-            <li><a href="#contact">Contato</a></li>
-          </ul>
-        </nav>
-      </div>
-    </footer>
-
-    <script src="index.js"></script>
-  </body>
+        </footer>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+        <script src="index.js"></script>
+    </body>
 </html>
