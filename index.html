@@ -1,22 +1,80 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/styles/reset.css" />
-    <link rel="stylesheet" href="/styles/home.css" />
-    <link rel="shortcut icon" href="/imgs/brick.png" type="image/x-icon" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <link rel="stylesheet" href="./styles/main.css"/>
     <title>Curriculo do Povo</title>
-  </head>
-  <body>
-    <main class="main">
-      <h1 class="titulo-construcao">Em Construção🏗️</h1>
-      <img
-        src="/imgs/architect.png"
-        alt="Imagem de um engenheiro em uma obra"
-        class="img-construcao"
-      />
-      <p>Estamos construindo algo incrível! Volte em breve.</p>
-    </main>
-  </body>
+</head>
+
+<body>
+    <!-- Formulário kk -->
+    <form id="dataForm">
+        <label for="name">Nome:</label>
+        <input type="text" id="name" required>
+        
+        <label for="message">Data de nascimento:</label>
+        <input type="date" id="dataNascimento" required>
+
+        <label for="message">Endereço:</label>
+        <textarea id="endereco" required></textarea>
+
+        <label for="message">Contato:</label>
+        <input type="tel" id="contato" required>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
+
+        <button type="submit">Enviar</button>
+    </form>
+
+    <div id="output"></div>
+    <button id="downloadBtn">Baixar PDF</button>
+
+    <!-- É aqui que a mágica acontece -->
+    <script>
+        // Pegar os inputs do usuário
+        document.getElementById('dataForm').addEventListener('submit', (event)=>{
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const endereco = document.getElementById('endereco').value;
+            const dataNascimento = document.getElementById('dataNascimento').value;
+
+            // usado para visualizar os dados do usuário antes de salvar em pdf
+            const layout = `
+            <h1>Dados Capturados</h1>
+            <p><strong>Nome:</strong> ${name}</p>
+            <p><strong>Email:</strong> ${email}</p>
+            <p><strong>Endereço:</strong> ${endereco}</p>
+            <p><strong>Data de nascimento:</strong> ${dataNascimento}</p>
+            `;
+
+            document.getElementById('output').innerHTML = layout;
+        });
+
+        // gerar o pdf
+        document.getElementById('downloadBtn').addEventListener('click', ()=>{
+            const { jsPDF } = window.jspdf; /*desestruturando o objeto window que possui o objeto jspdf que possui a propriedade jsPDF*/
+            const doc = new jsPDF(); /*jsPDF é uma classe da biblioteca que permite criar o pdf*/
+
+            // pegando informações do usuário de novo
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const endereco = document.getElementById('endereco').value;
+            const dataNascimento = document.getElementById('dataNascimento').value;
+
+            // margens de cada texto e as informações de cada campo que o usuário preencheu
+            doc.text(`Nome: ${name}`, 10, 10);
+            doc.text(`Email: ${email}`, 10, 20);
+            doc.text(`Endereço: ${endereco}`, 10, 30);
+            doc.text(`Data de nascimento: ${dataNascimento}`, 10, 40);
+
+            // método da biblioteca usado para gerar o pdf
+            doc.save('dados.pdf');
+        });
+    </script>
+</body>
 </html>
