@@ -1,0 +1,16 @@
+{
+  "name": "gerador-curriculo",
+  "version": "1.0.0",
+  "description": "Objetivo do Projeto",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev"
+  },
+  "author": "Matheus Milanez Marques Lopes",
+  "license": "MIT",
+  "dependencies": {
+    "next": "^13.1.6",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
