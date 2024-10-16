@@ -1,5 +1,5 @@
-function Home () {
-    return <h1>Programar é vida de maluco ahahahhahaha</h1>
+function Home() {
+  return <h1>Curriculo do Povo</h1>;
 }
 
 export default Home;
