@@ -13,3 +13,5 @@ Destruir imagem docker
 -docker compose down
 
 docker compose -f infra/compose.yaml up
+
+Instalar Docker - psql
